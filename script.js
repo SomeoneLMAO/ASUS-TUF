@@ -97,21 +97,6 @@ function startTypewriter() {
     }, 240);
 }
 
-  function typeNextCharacter() {
-    letterText.textContent = copy.slice(0, index);
-    index += 1;
-
-    if (index <= copy.length) {
-      window.setTimeout(typeNextCharacter, 42);
-      return;
-    }
-
-    finishLetter();
-  }
-
-  typeNextCharacter();
-}
-
 function finishLetter() {
   letterText.classList.add("is-finished");
   window.setTimeout(() => {
