@@ -30,7 +30,7 @@ body {
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow: auto;
   color: var(--ink);
   background:
     radial-gradient(circle at 18% 18%, rgba(246, 183, 200, 0.32), transparent 26%),
@@ -281,7 +281,7 @@ button {
   width: 100%;
   height: 100%;
   padding: clamp(28px, 7vw, 68px);
-  overflow: hidden;
+  overflow: auto;
   border: 1px solid rgba(232, 201, 139, 0.42);
   border-radius: 22px;
   background:
@@ -291,7 +291,7 @@ button {
 }
 
 .letter-text {
-  max-height: 78%;
+  max-height: none;
   margin: 0;
   overflow: hidden;
   white-space: pre-wrap;
