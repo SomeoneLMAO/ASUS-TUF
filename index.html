@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A private anniversary letter with a soft loading screen and password gate."
+    />
+    <title>Our Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Ambient Background -->
+    <div class="ambient-hearts" id="ambientHearts" aria-hidden="true"></div>
+
+    <!-- Loading Screen -->
+    <section class="screen screen--loading is-active" id="loadingScreen" aria-live="polite">
+      <div class="loading-card">
+        <div class="loading-heart" aria-hidden="true">❤️</div>
+        <h1>Our Story ❤️</h1>
+        <div class="progress" aria-label="Loading progress">
+          <span class="progress__bar" id="progressBar"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Password Screen -->
+    <main class="app" aria-live="polite">
+      <section class="screen screen--password" id="passwordScreen" aria-labelledby="passwordTitle">
+        <form class="password-card" id="passwordForm" novalidate>
+          <p class="eyebrow">A little secret...</p>
+          <h2 id="passwordTitle">Enter our anniversary date</h2>
+          <label class="sr-only" for="passwordInput">Anniversary date</label>
+          <input
+            id="passwordInput"
+            type="text"
+            inputmode="numeric"
+            autocomplete="off"
+            placeholder="DD/MM/YYYY"
+            aria-describedby="passwordMessage"
+          />
+          <button class="unlock-button" type="submit">Unlock</button>
+          <p class="form-message" id="passwordMessage"></p>
+        </form>
+      </section>
+
+      <!-- Letter Screen -->
+      <section class="screen screen--letter" id="letterScreen" aria-labelledby="letterTitle">
+        <div class="letter-shell">
+          <article class="paper-card">
+            <h2 id="letterTitle" class="sr-only">Letter</h2>
+            <p class="letter-text" id="letterText"></p>
+            <div class="letter-signoff" id="letterSignoff" aria-hidden="true">
+              <span>❤️</span>
+              <p>With Love</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
