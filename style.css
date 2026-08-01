@@ -264,6 +264,7 @@ button {
 /* Letter Screen */
 .screen--letter {
   z-index: 3;
+  overflow-y: auto;
 }
 
 .letter-shell {
@@ -277,11 +278,11 @@ button {
 .paper-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
   padding: clamp(28px, 7vw, 68px);
-  overflow: auto;
+  overflow-y: auto;
   border: 1px solid rgba(232, 201, 139, 0.42);
   border-radius: 22px;
   background:
@@ -293,11 +294,11 @@ button {
 .letter-text {
   max-height: none;
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
   white-space: pre-wrap;
   color: var(--rose-deep);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(1.55rem, 4.2vw, 2.45rem);
+  font-size: clamp(1.15rem, 3vw, 1.75rem);
   font-weight: 500;
   line-height: 1.42;
   text-align: left;
