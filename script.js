@@ -3,15 +3,31 @@ const CONFIG = {
   password: "27/01/2024",
 
     letter: `
-    Long-distance love sometimes reminds me of the sky and the sea.
+    Long distance love sometimes reminds me of the sky and the sea.
 
-Every day, the sky and the sea see each other. They exist in the same world, sharing every sunrise, every sunset, and every star-filled night. They always seem so close, yet they can never truly touch. That's what long-distance feels like to me. We wake up under the same sky, knowing we're thinking of each other, yet miles keep us apart. Even so, distance has never been able to lessen what I feel for you. Love is still there, just as endless as the horizon where the sky meets the sea.
+Every day, the sky and the sea see each other. They exist in the same world, sharing every sunrise, every sunset, and every night.
 
-Sometimes, I think of us as a fish and a cat.
+They always seem so close, yet they can never truly touch. That's what long distance feels like to me.
 
-We belong to two different worlds, each living in a place the other can't fully reach. But if I were that fish, I'd hold my breath for as long as I could, just to spend one more moment with you. I'd swim as close as I possibly could, because every second with you is worth it. The only thing standing between us isn't our love—it's the distance. And one day, even that distance won't be enough to keep us apart.
+We wake up under the same sky, knowing we're thinking of each other, yet distance keep us apart.
 
-Long-distance is never what I wanted for us, but if loving you means waiting, then waiting is something I'll gladly do. Because no matter how many miles separate us today, every day that passes brings us one step closer to the moment I can finally hold your hand instead of just imagining it.  
+My love is still there, just as endless as the sky meets the sea.
+
+And one more thing I can describe about us is I think of us as a fish and a cat.
+
+We belong to two different worlds, each living in a place the other nature can't fully reach.
+
+But if I were that fish, I'd hold my breath for as long as I could, just to spend one more moment with you.
+
+I would swim as close as I possibly could, because every second with you is worth it. The only thing standing between us is not our love but it's the distance.
+
+And one day, even that distance won't be enough to keep us apart.
+
+Long distance is never what WE wanted for us, but if loving each other means waiting, then waiting is something I'll gladly do.
+
+Because no matter how many distances separate us today, every day that passes brings us one step closer to the moment I can finally see you and hug you instead of just imagining it.
+
+One more honorable thing to say is You complete me baby and I will love you everyday and forever baby❤️.
   `,
 };
 
@@ -68,17 +84,18 @@ function normalizeDate(value) {
 
 /* Letter Screen */
 function startTypewriter() {
-  const copy = CONFIG.letter.trim();
-  letterText.textContent = "";
-  letterText.classList.remove("is-finished");
-  letterSignoff.classList.remove("is-visible");
+    const copy = CONFIG.letter.trim();
 
-  if (!copy) {
-    finishLetter();
-    return;
-  }
+    letterText.textContent = copy;
+    letterText.classList.add("is-finished");
 
-  let index = 0;
+    letterSignoff.classList.remove("is-visible");
+
+    window.setTimeout(() => {
+        letterSignoff.classList.add("is-visible");
+        letterSignoff.setAttribute("aria-hidden", "false");
+    }, 240);
+}
 
   function typeNextCharacter() {
     letterText.textContent = copy.slice(0, index);

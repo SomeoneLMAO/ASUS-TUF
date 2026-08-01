@@ -303,20 +303,6 @@ button {
   text-align: left;
 }
 
-.letter-text::after {
-  content: "";
-  display: inline-block;
-  width: 0.08em;
-  height: 0.9em;
-  margin-left: 4px;
-  background: var(--rose);
-  animation: cursorBlink 850ms steps(2, start) infinite;
-  vertical-align: -0.08em;
-}
-
-.letter-text.is-finished::after {
-  content: none;
-}
 
 .letter-signoff {
   display: grid;
